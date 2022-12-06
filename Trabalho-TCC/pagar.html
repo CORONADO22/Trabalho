@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript/homeCli.js" defer></script>
+    <title>Pagamento</title>
+</head>
+
+<header id="header">
+    <a id="logo" href="homeCliente.html"><img height="64px" src="img/logo_medweg-removebg-preview.png" alt="medweg"></a>
+    <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li> <a href="sobreCliente.html" style="cursor: pointer;">Sobre</a></li>
+            <li> <a href="selecaoFarmacia.php" style="cursor: pointer;">Farmácia</a></li>
+            <!--Perfil-->
+            <a id="button-user" style="cursor: pointer;"><img style="width: 75%;" src="img/perfil-de-usuario.png"
+                    alt="user"></a>
+
+
+            <!--Carrinho-->
+            <a id="myBtn" style="cursor: pointer;"><img style="width: 75%;"
+                    src="img/carrinho-de-compras-de-design-xadrez (1).png" alt="carrinho"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" href="compraFeita.php">Histórico</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="div_form_pagar">
+        <form action="cadastr.php" class="form_pagar" method="POST">
+            <!--IP 1-->
+            <div class="field-row nome">
+                <div class="field-col grow20">
+                    <label class="labelPagar">Digite seu Nome:</label>
+                    <input type="text" id="nome" placeholder="Nome" class="input_pagar_nome" name="nome_comp" required>
+                </div>
+                <div class="field-col">
+                    <label class="labelPagarSobrenome">Digite seu Sobrenome:</label>
+                    <input type="text" id="nome" placeholder="Sobrenome"
+                        class="input_pagar_sobrenome" name="sobrenome_comp" required>
+                </div>
+            </div>
+
+            <div class="field-col">
+                <label for="" class="labelPagarEmail">Digite seu Email:</label>
+                <input type="email" id="email" placeholder="Email" class="input_pagar_email" name="email_comp" required>
+            </div>
+
+            <div class="field-col">
+                <label for="" class="labelPagar">Digite seu CPF:</label>
+                <input type="text" id="cpf" placeholder="CPF" maxlength="11" class="input_pagar_cpf" name="cpf_comp" required>
+            </div>
+            <div class="field-row">
+                <div class="field-col grow10">
+                    <label for="nome" class="labelPagar">Digite o seu CEP:</label>
+                    <input type="text" id="cep" placeholder="CEP" maxlength="8" class="input_pagar_cep" name="cep_comp" required>
+                </div>
+                <div class="field-col">
+                    <label for="" class="labelPagarRua">Digite o nome da Rua:</label>
+                    <input type="text" id="rua" placeholder="Rua" class="input_pagar_rua" name="rua_comp" required>
+                </div>
+            </div>
+            <div class="field-row">
+                <div class="field-col">
+                    <label for="nome" class="labelPagar">Digite o nome do Bairro:</label>
+                    <input type="text" name="bairro_pagar" id="bairro" placeholder="Bairro" class="input_pagar_bairro" name="bairro_comp" required>
+                </div>
+                <div class="field-col">
+                    <label for="nome" class="labelPagarNumero">Digite o número da casa:</label>
+                    <input type="text" name="numero_pagar" id="numero" maxlength="6" placeholder="Número"
+                        class="input_pagar_numero" name="numero_comp" required>
+                </div>
+            </div>
+
+            <div class="field-col">
+                <label for="nome" class="labelPagar">Digite seu Telefone:</label>
+                <input type="text" name="telefone_pagar" id="telefone" maxlength="11" placeholder="Telefone"
+                    class="input_pagar_tel" name="telefone_comp" required>
+            </div>
+
+            <hr class="linha_form_pagar">
+
+            <label for="">Reserva</label>
+
+            <div class="field-col">
+                <label class="labelPagar" for="">Data de reservação:</label>
+                <input type="date" id="dataReser" name="data_reserva">
+            </div>
+
+            <label for="" class="labelPagar" style="margin-top: 1rem;">Tipo de Reserva:</label>
+
+            <div>
+                <label class="labelPagar" for="">Contínua</label>
+                <input type="radio" name="tipo_reserva">
+                <label class="labelPagar" for="" style="margin-left: 5vw;">Única</label>
+                <input type="radio" name="tipo_reserva">
+            </div>
+
+            <hr class="linha_form_pagar">
+
+            <label for="" >Forma de Pagamento</label>
+
+            <div class="custom-control custom-radio">
+                <input id="credito" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                <label class="custom-control-label" for="credito">Cartão de crédito</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input id="debito" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="debito">Cartão de débito</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="paypal">PayPal</label>
+            </div>
+
+            <div class="field-row">
+                <div class="field-col">
+                    <label for="cc-numero">Número do cartão:</label>
+                    <input type="text" class="form-control" id="cc-numero" placeholder="Cartão" required="" name="numero_cartao">
+                </div>
+                <div class="field-col">
+                    <label for="cc-numero">Codigo do cartão:</label>
+                    <input type="text" class="form-control" id="cc-numero" placeholder="Código" required="" name="codigo_cartao">
+                </div>
+            </div>
+
+            <div class="field-col">
+                <label for="cc-numero">Data de expiração:</label>
+                <input type="date" class="form-control" id="cc-numero-data-cartao" placeholder="Data" required="" name="data_expira">
+            </div>
+
+            <input type="submit" value="Comprar" class="input-comprar" style="cursor: pointer;">
+
+        </form>
+    </div>
+</body>
+
+<footer>
+
+    <div class="container-footer">
+        <div class="row-footer">
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="sobreCliente.html"> Quem somos</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Obter ajuda</h4>
+                <ul>
+                    <li><a href="sobreCliente.html">informações de contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+                <h4>Objetivo do sistema</h4>
+                <ul>
+                    <li><a href="sobreCliente.html">informações</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-col">
+                <h4>Enviar e-mail de reclamação</h4>
+                <div class="form-sub">
+
+                    <form>
+                        <input type="email" placeholder="Digite o seu email" required>
+                        <button>Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="pagar.css">
+<div id="sidebar">
+    <h1 id="nome">Compra</h1>
+    <img id="imagemSidebar" src="">
+    <h2 id="preco">R$ 0.00</h2>
+</div>
+
+<!-- waka waka eh eh -->
+
+<style>
+    #sidebar * {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;    
+    }
+#sidebar #imagemSidebar {
+    width: 100%;
+    margin-top: 50px;
+}
+
+#preco {
+margin-top: 20px;
+}
+
+#nome {
+ 
+}
+</style>
+
+<script>
+// Código por Lucas Bortoli
+(function() {
+    var url = new URL(location.href);
+    var data = url.searchParams.get("dados");
+
+    if (!data) {
+        return;
+    }
+
+    var parsed = JSON.parse(decodeURIComponent(data));
+    
+    document.querySelector("#sidebar #nome").innerText = parsed.nome_prod;
+    document.querySelector("#sidebar #imagemSidebar").src = parsed.link_prod;
+    document.querySelector("#sidebar #preco").innerText = "R$ " + parsed.preco_prod;
+    console.log(parsed);
+})();
+
+var dataReserva = document.getElementById("dataReser");
+dataReserva.min = new Date().toISOString().split("T")[0];
+
+var dataExpira = document.getElementById("cc-numero-data-cartao");
+dataExpira.min = new Date().toISOString().split("T")[0];
+
+</script>
+
+</html>

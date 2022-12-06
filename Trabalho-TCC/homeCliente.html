@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript/homeCli.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Tela Principal</title>
+
+</head>
+
+<header id="header">
+    <a id="logo" href="homeCliente.html"><img height="64px" src="img/logo_medweg-removebg-preview.png" alt="medweg"></a>
+    <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li> <a href="sobreCliente.html" style="cursor: pointer;">Sobre</a></li>
+            <li> <a href="selecaoFarmacia.php" style="cursor: pointer;">Farmácia</a></li>
+            <!--Perfil-->
+            <a id="button-user" style="cursor: pointer;"><img style="width: 75%;"
+                src="img/perfil-de-usuario.png" alt="user"></a>
+            
+            
+            <!--Carrinho-->
+            <a id="myBtn" style="cursor: pointer;"><img style="width: 75%;"
+                    src="img/carrinho-de-compras-de-design-xadrez (1).png" alt="carrinho"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" href="compraFeita.php">Histórico</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+    <!--<h1>Auto - Image Slider HTML and CSS</h1>-->
+    <center>
+        <div class="slider-frame">
+            <div class="slide-images">
+                <div class="img-container">
+                    <img src="img/CyberWeek-Ferias.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/promoNutri.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/promoBeleza.png" alt="">
+                </div>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+<footer>
+
+    <div class="container-footer">
+        <div class="row-footer">
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="sobreCliente.html"> Quem somos</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Obter ajuda</h4>
+                <ul>
+                    <li><a href="sobreCliente.html">informações de contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+                <h4>Objetivo do sistema</h4>
+                <ul>
+                    <li><a href="sobreCliente.html">informações</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-col">
+                <h4>Enviar e-mail de reclamação</h4>
+                <div class="form-sub">
+
+                    <form>
+                        <input type="email" placeholder="Digite o seu email" required>
+                        <button>Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</html>

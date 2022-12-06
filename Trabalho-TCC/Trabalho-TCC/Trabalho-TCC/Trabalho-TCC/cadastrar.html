@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<header id="header">
+    <a id="logo" href="index.html"><img height="64px" src="img/logo_medweg-removebg-preview.png" alt="medweg"></a>
+    <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li> <a style="cursor: pointer;" onclick="moveToSobre()">Sobre</a></li>
+            <li> <a style="cursor: pointer;">Farmácia</a></li>
+            <li> <a style="cursor: pointer;" id="button-cadastra">Login</a></li>
+            <!--Login-->
+            <div class="tela-login" id="modal-login-first">
+                <div class="modal-login">
+                    <span class="close-login" style="cursor: pointer">&times;</span>
+                    <br>
+                    <br>
+                    <h3>Login</h3>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Email" class="input-login">
+                    <br><br>
+                    <input type="password" placeholder="Senha" class="input-login">
+                    <br><br>
+                    <button class="button-login">Enviar</button>
+                    <span><a href="cadastrar.html" style="color: red; text-decoration: underline;">Não possuo cadastro.</a></span>
+                </div>
+            </div>
+            <!--Cadastrar-->
+            
+            <!--Carrinho-->
+            <a id="myBtn" style="cursor: pointer;"><img style="width: 75%;"
+                    src="img/carrinho-de-compras-de-design-xadrez (1).png" alt="carrinho"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <br>
+                    <a class="modal-border-a" id="button-sacola" style="cursor: pointer;">Sacola</a>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" href="homeFarmacia.html">Histórico</a>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" href="homeCliente.html">Reserva</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="box">
+        <form action="">
+                <legend><b>Cadastro</b></legend>
+                <br>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+                <br>
+                
+                <p>Oque voce é:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Cliente</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Farmacia</label>
+                <br><br>
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+                <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>

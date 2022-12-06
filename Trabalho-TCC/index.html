@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Tela Principal</title>
+
+</head>
+
+<header id="header">
+    <a id="logo" href="index.html"><img height="64px" src="img/logo_medweg-removebg-preview.png" alt="medweg"></a>
+    <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li> <a style="cursor: pointer;" href="Sobre.html">Sobre</a></li>
+            <li> <a style="cursor: pointer;" id="button-farmacia-home">Farmácia</a></li>
+            <li> <a style="cursor: pointer;" id="button-cadastra">Login</a></li>
+            <!--Login
+            <div class="tela-login" id="modal-login-first">
+                <div class="modal-login">
+                    <span class="close-login" style="cursor: pointer">&times;</span>
+                    <br>
+                    <br>
+                    <h3>Login</h3>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Email" class="input-login">
+                    <br><br>
+                    <input type="password" placeholder="Senha" class="input-login">
+                    <br><br>
+                    <button class="button-login">Enviar</button>
+                    <span><a href="cadastrar.html" style="color: red; text-decoration: underline;">Não possuo cadastro.</a></span>
+                </div>
+            </div>
+        -->
+            <form action="login.php" method="POST" class="tela-login" id="modal-login-first">
+                <span class="close-login">&times;</span>
+                <br><br>
+                <div class="modal-login">
+                    <b class="login_txt">Login Cliente</b>
+                    <br><br>
+                    <p>Oque voce é:</p>
+                    <br>
+                    <input onclick="moveToLoginCli()" type="radio" id="cliente_login" name="ocupacao" value="feminino"
+                        checked>
+                    <label for="feminino">Cliente</label>
+                    <br>
+                    <br>
+                    <input onclick="moveToLoginFarma()" type="radio" id="farmacia_login" name="ocupacao"
+                        value="masculino" required>
+                    <label for="masculino">Farmacia</label>
+                    <br><br><br>
+                    <div class="inputBox">
+                        <input type="email" name="email_txt" id="email" class="inputUser" required>
+                        <label for="email" class="labelInput">Email</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="password" name="senha_txt" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br>
+                    <input type="submit" href="index.html" name="submit" id="submit" class="butt-enviar">
+                    <br><br><br>
+                    <span class="button-nao-cadastro" style="cursor: pointer;"><a
+                            style="color: red; text-decoration: underline;">Não possuo
+                            cadastro.</a></span>
+                </div>
+            </form>
+
+            <form action="login_farmacia.php" method="POST" class="tela-login-farma" id="modal-login-first-farma">
+                <span class="close-login-farma" onclick="fechar_login_farmacia();">&times;</span>
+                <br><br>
+                <div class="modal-login-farma">
+                    <b class="login_txt">Login Farmácia</b>
+                    <br><br>
+                    <p>Oque voce é:</p>
+                    <br>
+                    <input onclick="moveToLoginCli()" type="radio" id="cliente_login" name="ocupacao" value="feminino"
+                        required>
+                    <label for="feminino">Cliente</label>
+                    <br>
+                    <br>
+                    <input onclick="moveToLoginFarma()" type="radio" id="farmacia_login" name="ocupacao"
+                        value="masculino" checked>
+                    <label for="masculino">Farmacia</label>
+                    <br><br><br>
+                    <div class="inputBox">
+                        <input type="text" name="unidade_txt" id="unidade" class="inputUser" required>
+                        <label for="unidade" class="labelInput" onsubmit="getUnidade()">Unidade</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="password" name="senha_far_txt" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br>
+                    <input type="submit" href="index.html" name="submit" id="submit" class="butt-enviar">
+                    <br><br><br>
+                    <span class="button-nao-cadastro-farma" style="cursor: pointer;"><a
+                            style="color: red; text-decoration: underline;">Não possuo
+                            cadastro.</a></span>
+                </div>
+            </form>
+            <!--Cadastrar-->
+            <div class="box-cli" id="modal-cadastrar">
+                <form action="cliente.php" method="POST">
+                    <span class="close-cadastro">&times;</span>
+                    <br><br>
+                    <legend style="background-color: #E4FFF7; color: black;"><b>Cadastro</b></legend>
+                    <br>
+                    <br>
+                    <p>Oque voce é:</p>
+                    <br>
+                    <input onclick="moveToCadastraCli()" type="radio" id="cliente" name="ocupacao" value="feminino"
+                        checked>
+                    <label for="feminino">Cliente</label>
+                    <br>
+                    <br>
+                    <input onclick="moveToCadastraFarma()" type="radio" id="farmacia" name="ocupacao" value="masculino"
+                        required>
+                    <label for="masculino">Farmacia</label>
+                    <br><br>
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="nome_txt" id="nome" class="inputUser" required>
+                        <label for="nome" class="labelInput">Nome completo</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" maxlength="11" name="cpf_txt" id="cpf" class="inputUser" required
+                            oninput="TestaCPF()">
+                        <label for="cpf" class="labelInput">CPF</label>
+                    </div>
+                    <br><br>
+                    <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                    <input type="date" name="data_nascimento_txt" id="data_nascimento" required>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="email" name="email_txt" id="email" class="inputUser" required>
+                        <label for="email" class="labelInput">Email</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="password" name="senha_txt" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="tel" name="telefone_txt" maxlength="11" id="telefone" class="inputUser" required>
+                        <label for="telefone" class="labelInput">Telefone/Celular</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <input type="text" name="cidade_txt" id="cidade" class="inputUser" required>
+                        <label for="cidade" class="labelInput">Cidade</label>
+                    </div>
+                    <br><br>
+                    <label> Estado: </label>
+
+                    <select name="estado_txt" id="estado" class="estado">
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    <br><br>
+                    <br><br>
+                    <script>
+                    </script>
+                    <input type="submit" name="submit" id="submit" class="butt-enviar" ;>
+                </form>
+            </div>
+
+            <!--Cadastrar Farmácia-->
+
+            <div class="box-farma" id="modal_cadastrar_farma">
+
+                <form action="farmacia.php" method="POST">
+
+                    <span class="close-cadastro-farma">&times;</span>
+                    <br><br>
+                    <legend style="background-color: #E4FFF7; color: black;"><b>Cadastro Farmácia</b></legend>
+                    <br>
+                    <br>
+                    <p>Oque voce é:</p>
+                    <br>
+                    <input onclick="moveToCadastraCli()" type="radio" id="cliente" name="genero" value="feminino"
+                        required>
+                    <label for="feminino">Cliente</label>
+                    <br>
+                    <br>
+                    <input onclick="moveToCadastraFarma()" type="radio" id="farmacia" name="genero" value="masculino"
+                        checked>
+                    <label for="masculino">Farmacia</label>
+                    <br><br>
+                    <br>
+                    <div class="inputBox">
+                        <!--UNIDADE-->
+                        <input type="text" maxlength="20" name="unidade_txt" id="unidade" class="inputUser" required>
+                        <label for="unidade" class="labelInput" onsubmit="getUnidade()">Unidade</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--SENHA-->
+                        <input type="password" name="senha_far_txt" id="senha" class="inputUser" required>
+                        <label for="senha" class="labelInput">Senha</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--EMPRESA-->
+                        <input type="text" name="empresa_txt" id="empresa" class="inputUser" required>
+                        <label for="empresa" class="labelInput">Nome da empresa</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--CIDADE-->
+                        <input type="text" name="cidade_far_txt" id="cidade" class="inputUser" required>
+                        <label for="cidade" class="labelInput">Cidade</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--RUA-->
+                        <input type="tel" name="rua_far_txt" id="rua" class="inputUser" required>
+                        <label for="rua" class="labelInput">Rua</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--BAIRRO-->
+                        <input type="text" name="bairro_far_txt" id="bairro" class="inputUser" required>
+                        <label for="bairro" class="labelInput">Bairro</label>
+                    </div>
+                    <br><br>
+                    <label for="tipo_prod">Estado: </label>
+
+                    <select name="estado_far_txt" id="estado" class="estado">
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    <br>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--NUMERO RESIDENCIAL-->
+                        <input type="text" maxlength="6" name="numero_far_txt" id="numero" class="inputUser" required>
+                        <label for="numero" class="labelInput">Numero do Estabelecimento</label>
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <!--TELEFONE-->
+                        <input type="tel" name="telefone_far_txt" maxlength="11" id="telefone" class="inputUser" required>
+                        <label for="telefone" class="labelInput">Telefone/Celular</label>
+                    </div>
+                    <br><br>
+
+                    <input type="submit" name="submit" id="submit" class="butt-enviar">
+
+
+                </form>
+            </div>
+            <!--Carrinho-->
+            <a id="myBtn" style="cursor: pointer;"><img style="width: 75%;"
+                    src="img/carrinho-de-compras-de-design-xadrez (1).png" alt="carrinho"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="fechar_login_cliente()">&times;</span>
+                    <br>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" id="button-historico">Histórico</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+    <!--<h1>Auto - Image Slider HTML and CSS</h1>-->
+    <center>
+        <div class="slider-frame">
+            <div class="slide-images">
+                <div class="img-container">
+                    <img src="img/CyberWeek-Ferias.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/promoNutri.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/promoBeleza.png" alt="">
+                </div>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+<footer>
+
+    <div class="container-footer">
+        <div class="row-footer">
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="Sobre.html"> Quem somos</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Obter ajuda</h4>
+                <ul>
+                    <li><a href="Sobre.html">informações de contato</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+                <h4>Objetivo do sistema</h4>
+                <ul>
+                    <li><a href="Sobre.html">informações</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-col">
+                <h4>Enviar e-mail de reclamação</h4>
+                <div class="form-sub">
+
+                    <form>
+                        <input type="email" placeholder="Digite o seu email" required>
+                        <button>Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</html>

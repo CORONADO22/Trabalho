@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UFF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Tela Principal</title>
+
+</head>
+
+<header id="header">
+    <a id="logo" href="index.html"><img height="64px" src="img/logo_medweg-removebg-preview.png" alt="medweg"></a>
+    <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+            <li> <a style="cursor: pointer;" onclick="moveToSobre()">Sobre</a></li>
+            <li> <a style="cursor: pointer;" id="button-farmacia-home">Farmácia</a></li>
+            <li> <a style="cursor: pointer;" id="button-cadastra">Login</a></li>
+            <!--Login-->
+            <div class="tela-login" id="modal-login-first">
+                <div class="modal-login">
+                    <span class="close-login" style="cursor: pointer">&times;</span>
+                    <br>
+                    <br>
+                    <h3>Login</h3>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Email" class="input-login">
+                    <br><br>
+                    <input type="password" placeholder="Senha" class="input-login">
+                    <br><br>
+                    <button class="button-login">Enviar</button>
+                    <span><a href="cadastrar.html" style="color: red; text-decoration: underline;">Não possuo cadastro.</a></span>
+                </div>
+            </div>
+            <!--Cadastrar-->
+            
+            <!--Carrinho-->
+            <a id="myBtn" style="cursor: pointer;"><img style="width: 75%;"
+                    src="img/carrinho-de-compras-de-design-xadrez (1).png" alt="carrinho"></a>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <br>
+                    <br>
+                    <a class="modal-border-a" id="button-sacola">Sacola</a>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" id="button-historico">Histórico</a>
+                    <br>
+                    <span class="close"></span>
+                    <a class="modal-border-a" id="button-reserva">Reserva</a>
+                </div>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+    <!--<h1>Auto - Image Slider HTML and CSS</h1>-->
+    <center>
+        <div class="slider-frame">
+            <div class="slide-images">
+                <div class="img-container">
+                    <img src="img/nurse-helping-patient.jpg" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/lost_of_people_health.jpg" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="img/plano-de-saude-com-fator-moderador.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+<footer>
+
+    <div class="container-footer">
+        <div class="row-footer">
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href=""> Quem somos</a></li>
+                    <li><a href=""> Nossos serviços</a></li>
+                    <li><a href=""> Política de Privacidade</a></li>
+                    <li><a href=""> Programa de Afiliados</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Obter ajuda</h4>
+                <ul>
+                    <li><a href=""> Faq</a></li>
+                    <li><a href=""> Transporte</a></li>
+                    <li><a href=""> Devolução</a></li>
+                    <li><a href=""> Status do pedido</a></li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-col">
+                <h4> Loja online</h4>
+                <ul>
+                    <li><a href=""> Remédios</a></li>
+                    <li><a href=""> Hegiene pessoal</a></li>
+                    <li><a href=""> Beleza</a></li>
+                    <li><a href=""> Alimentação</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <div class="form-sub">
+
+                    <form>
+                        <input type="email" placeholder="Digite o seu email" required>
+                        <button>Enviar</button>
+                    </form>
+                </div>
+
+                <div class="medidas-socias">
+                    <a href=""><i class="fa facebook"></i></a>
+                    <a href=""><i class="fa instagram"></i></a>
+                    <a href=""><i class="fa twiter"></i></a>
+                    <a href=""><i class="fa linkdin"></i></a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</html>

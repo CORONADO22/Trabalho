@@ -1,0 +1,22 @@
+#sidebar {
+    width: 300px;
+    height: 480px;
+    padding: 1rem;
+    color: #212121;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #fff;
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    border-color: black;
+    box-shadow: 4px 8px 0px rgba(0,0,0,0.16);
+}
+
+#sidebar h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 200;
+}
